@@ -1,0 +1,22 @@
+# 1. Bỏ qua file môi trường ảo
+.venv/
+venv/
+env/
+
+# 2. Bỏ qua file cấu hình biến môi trường (CHỨA API KEY - QUAN TRỌNG NHẤT)
+.env
+
+# 3. Bỏ qua các file rác của Python
+__pycache__/
+*.py[cod]
+
+# 4. Bỏ qua thư mục build của Buildozer (Nặng hàng GB, không được up lên)
+.buildozer/
+bin/
+
+# 5. Bỏ qua file cấu hình của IDE (VS Code, Pycharm)
+.vscode/
+.idea/
+
+# 6. Bỏ qua file APK đã build ra
+*.apk

@@ -1,0 +1,10 @@
+kivy
+openai
+python-dotenv
+SpeechRecognition
+plyer
+pyaudio
+requests
+beautifulsoup4
+pypdf
+python-docx
