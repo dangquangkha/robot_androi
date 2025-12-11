@@ -1,43 +1,54 @@
 <ChatView>:
-    orientation: 'vertical'
-    padding: 10
-    spacing: 10
+    name: "chat_screen"  # <--- Đặt tên để ScreenManager gọi
 
-    Label:
-        text: "AI Chat Voice Assistant"
-        size_hint_y: 0.1
-        font_size: '20sp'
-        bold: True
-
-    ScrollView:
-        size_hint_y: 0.7
-        TextInput:
-            id: chat_history
-            text: "Chào bạn! Hãy nhấn nút Mic để nói chuyện."
-            readonly: True
-            size_hint_y: None
-            height: self.minimum_height
-            background_color: 0, 0, 0, 0
-            foreground_color: 1, 1, 1, 1
-
-    Label:
-        id: status_label
-        text: "Sẵn sàng"
-        size_hint_y: 0.1
-        color: 0.5, 0.5, 0.5, 1
-
+    # Bọc nội dung cũ vào BoxLayout
     BoxLayout:
-        size_hint_y: 0.1
+        orientation: 'vertical'
+        padding: 10
         spacing: 10
-        
-        Button:
-            text: "Chọn tài liệu"
-            size_hint_x: 0.3
-            background_color: 0.5, 0.5, 0.5, 1
-            on_release: root.on_file_press()
 
-        Button:
-            text: "Bấm để nói"
-            size_hint_x: 0.7
-            background_color: 0, 0.7, 0.8, 1
-            on_release: root.on_mic_press()
+        Label:
+            text: "AI Chat Voice Assistant"
+            size_hint_y: 0.1
+            font_size: '20sp'
+            bold: True
+
+        ScrollView:
+            size_hint_y: 0.7
+            TextInput:
+                id: chat_history
+                text: "Chào bạn! Hãy nhấn nút Mic để nói chuyện."
+                readonly: True
+                size_hint_y: None
+                height: self.minimum_height
+                background_color: 0, 0, 0, 0
+                foreground_color: 1, 1, 1, 1
+
+        Label:
+            id: status_label
+            text: "Sẵn sàng"
+            size_hint_y: 0.1
+            color: 0.5, 0.5, 0.5, 1
+
+        BoxLayout:
+            size_hint_y: 0.1
+            spacing: 10
+            
+            Button:
+                text: "Chọn tài liệu"
+                size_hint_x: 0.3
+                background_color: 0.5, 0.5, 0.5, 1
+                on_release: root.on_file_press()
+
+            Button:
+                text: "Bấm để nói"
+                size_hint_x: 0.7
+                background_color: 0, 0.7, 0.8, 1
+                on_release: root.on_mic_press()
+            
+            # Thêm nút Quay lại Home (Tùy chọn)
+            Button:
+                text: "Home"
+                size_hint_x: 0.2
+                background_color: 0.8, 0, 0, 1
+                on_release: app.root.current = "home_screen"

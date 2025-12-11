@@ -1,11 +1,11 @@
-from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.screenmanager import Screen # <--- Thay đổi import
 from kivy.lang import Builder
 import os
 
-# Load file .kv
 Builder.load_file(os.path.join(os.path.dirname(__file__), 'chat.kv'))
 
-class ChatView(BoxLayout):
+# Đổi từ BoxLayout sang Screen
+class ChatView(Screen): 
     def __init__(self, controller=None, **kwargs):
         super().__init__(**kwargs)
         self.controller = controller

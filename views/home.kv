@@ -1,0 +1,55 @@
+<HomeView>:
+    name: "home_screen" # Tên định danh
+
+    # 1. Ảnh nền (Tràn màn hình)
+    Image:
+        source: "assets/background.jpg" # Nhớ tạo file ảnh này
+        allow_stretch: True
+        keep_ratio: False
+
+    # 2. Layout chứa nút bấm
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+        
+        # Khoảng trống để đẩy nút xuống dưới hoặc giữa
+        Widget:
+            size_hint_y: 0.6
+
+        Label:
+            text: "TRỢ LÝ ẢO AI"
+            font_size: '32sp'
+            bold: True
+            color: 1, 1, 1, 1
+            outline_color: 0, 0, 0, 1
+            outline_width: 2
+            size_hint_y: 0.2
+
+        Button:
+            text: "BẮT ĐẦU TRÒ CHUYỆN"
+            font_size: '20sp'
+            size_hint_y: 0.15
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5}
+            background_color: 0, 0.7, 0.8, 1
+            # Lệnh chuyển màn hình quan trọng nhất:
+            on_release: 
+                root.manager.transition.direction = 'left'
+                root.manager.current = "chat_screen"
+
+        Widget:
+            size_hint_y: 0.05
+        
+        # --- NÚT THOÁT ỨNG DỤNG MỚI THÊM VÀO ---
+        Button:
+            text: "THOÁT ỨNG DỤNG"
+            font_size: '18sp'
+            size_hint_y: 0.15
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5}
+            background_color: 0.8, 0, 0, 1 # Màu đỏ
+            on_release: app.stop() # Lệnh đóng ứng dụng Kivy
+
+        Widget:
+            size_hint_y: 0.05
